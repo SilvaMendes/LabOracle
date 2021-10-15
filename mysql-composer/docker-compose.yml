@@ -6,8 +6,6 @@ services:
             "lab-mysql"
         ports:
             - "3306:3306"
-        networks:
-            - frontend
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
