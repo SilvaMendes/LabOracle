@@ -2,8 +2,6 @@ version: "3"
 services:
     database:
         image: dev_mysql
-        container_name:
-            "lab-mysql"
         ports:
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
