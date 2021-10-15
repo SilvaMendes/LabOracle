@@ -1,13 +1,19 @@
 version: "3"
 services:
     database:
-        image: mysql
+        image: dev_mysql
+        labels:
+            "lab-mysql"
+        ports:
+            - "3306:3306"
+        networks:
+            - frontend
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: 220513
             MYSQL_DATABASE: dev
-            MYSQL_USER: root
+            MYSQL_USER: admin
             MYSQL_PASSWORD: admin
         volumes:
             - "data:/var/lib/mysql"
