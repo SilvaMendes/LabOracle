@@ -2,7 +2,7 @@ version: "3"
 services:
     database:
         image: dev_mysql
-        labels:
+        container_name:
             "lab-mysql"
         ports:
             - "3306:3306"
