@@ -1,6 +1,6 @@
 version: "3"
 services:
-    Asterisk:
+    asterisk:
         build: .
         container_name:
             "lab-asterisk"
