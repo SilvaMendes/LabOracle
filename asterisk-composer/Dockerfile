@@ -6,7 +6,7 @@ ENV ASTERISK_VERSION 17-current
 ENV OPUS_CODEC       asterisk-17.0/x86-64/codec_opus-17.0_current-x86_64
 
 COPY build-asterisk.sh /
-RUN /build-asterisk.sh
+RUN /bin/bash /build-asterisk.sh
 
 #EXPOSE 5060/udp 5060/tcp
 #VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
