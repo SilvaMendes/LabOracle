@@ -86,7 +86,8 @@ menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeo
 menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts
 menuselect/menuselect --disable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts
 
-make -j ${JOBS} all
+#make ${JOBS} all
+make
 make install
 
 # copy default configs
