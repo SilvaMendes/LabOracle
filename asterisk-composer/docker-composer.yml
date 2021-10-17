@@ -1,0 +1,17 @@
+version: "3"
+services:
+    Asterisk:
+        build: .
+        container_name:
+            "lab-asterisk"
+        ports:
+            - "5060:5060"
+        restart: always
+        volumes:
+            - "data:/var/lib/asterisk/sounds"
+            - "data:/var/lib/asterisk/keys"
+            - "data:/var/lib/asterisk/phoneprov"
+            - "data:/var/spool/asterisk"
+            - "data:/var/log/asterisk"
+volumes:
+    data:
