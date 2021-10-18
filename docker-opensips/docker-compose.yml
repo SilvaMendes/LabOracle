@@ -5,7 +5,10 @@ services:
         container_name:
             "Opensips32Lab"
         ports:
-            - "5060:5061"
+            - "5060:5060"
+        networks:
+            vpcbr:
+            ipv4_address: 10.5.0.10
         restart: always
     
         environment:
@@ -15,3 +18,11 @@ services:
           
 volumes:
     data:
+        
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
