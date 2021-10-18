@@ -1,0 +1,23 @@
+version: "3"
+services:
+    opensips:
+        build:
+            dockerfile: ./Dockerfile
+            context: . 
+    container_name:
+        "Opensips_3.2_Lab"
+    ports:
+        - "5060:5061"
+    restart: always
+    
+    environment:
+        OPENSIPS_VERSION: 3.2
+        OPENSIPS_BUILD: releases
+        OPENSIPS_CLI: false
+        OPENSIPS_EXTRA_MODULES: 
+        DEBIAN_FRONTEND: noninteractive
+    volumes:
+            - "data:/etc/opensips"
+          
+volumes:
+    data:
