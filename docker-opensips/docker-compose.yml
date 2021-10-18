@@ -1,11 +1,11 @@
 version: "3"
 services:
     opensips:
+        container_name:
+        "Opensips_3.2_Lab"
         build:
             dockerfile: ./Dockerfile
             context: . 
-    container_name:
-        "Opensips_3.2_Lab"
     ports:
         - "5060:5061"
     restart: always
