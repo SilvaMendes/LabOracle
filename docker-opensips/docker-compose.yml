@@ -2,7 +2,7 @@ version: "3"
 services:
     opensips:
         container_name:
-        "Opensips_3.2_Lab"
+        - "Opensips-3.2-Lab"
         build:
             dockerfile: ./Dockerfile
             context: . 
