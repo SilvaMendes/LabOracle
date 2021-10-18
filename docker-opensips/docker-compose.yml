@@ -9,9 +9,9 @@ services:
         restart: always
     
         environment:
-            OPENSIPS_VERSION: 3.2
-            OPENSIPS_BUILD: releases
-            OPENSIPS_CLI: false
+            OPENSIPS_VERSION: "3.2"
+            OPENSIPS_BUILD: "releases"
+            OPENSIPS_CLI: "false"
             OPENSIPS_EXTRA_MODULES: 
             DEBIAN_FRONTEND: noninteractive
         volumes:
