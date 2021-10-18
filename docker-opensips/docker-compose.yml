@@ -3,10 +3,10 @@ services:
     opensips:
         build:
             dockerfile: ./Dockerfile
-        container_name: 
-        "Opensips32Lab"
+        container_name:
+            - "Opensips32Lab"
         ports:
-            "5060:5061"
+            - "5060:5061"
         restart: always
     
         environment:
