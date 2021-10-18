@@ -14,18 +14,18 @@ RUN apt-get -y update -qq && apt-get -y install gnupg2 ca-certificates
 
 #add keyserver, repository
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 049AD65B
-RUN echo "deb https://apt.opensips.org buster ${OPENSIPS_VERSION}-${OPENSIPS_BUILD}" >/etc/apt/sources.list.d/opensips.list
+RUN echo "deb https://apt.opensips.org buster $OPENSIPS_VERSION-$OPENSIPS_BUILD" >/etc/apt/sources.list.d/opensips.list
 
 RUN apt-get -y update -qq && apt-get -y install opensips
 
 #ARG OPENSIPS_CLI=false
-RUN if [ ${OPENSIPS_CLI} = true ]; then \
+RUN if [ $OPENSIPS_CLI = true ]; then \
     echo "deb https://apt.opensips.org buster cli-nightly" >/etc/apt/sources.list.d/opensips-cli.list \
     && apt-get -y update -qq && apt-get -y install opensips-cli \
     ;fi
 
 #ARG OPENSIPS_EXTRA_MODULES
-RUN if [ -n "${OPENSIPS_EXTRA_MODULES}" ]; then \
+RUN if [ -n "$OPENSIPS_EXTRA_MODULES" ]; then \
     apt-get -y install ${OPENSIPS_EXTRA_MODULES} \
     ;fi
 
