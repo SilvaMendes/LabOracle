@@ -2,27 +2,26 @@ version: "3"
 services:
     opensips:
         build: .
-        container_name:
-            "Opensips32Lab"
+        container_name: "Opensips32Lab"
         ports:
             - "5060:5060"
         networks:
-            sip: 
+            sip:
                 ipv4_address: 10.5.0.10
-                
+
         restart: always
         environment:
             DEBIAN_FRONTEND: noninteractive
         volumes:
             - "data:/etc/opensips"
-          
+
 volumes:
     data:
-        
+
 networks:
-  sip:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
+    sip:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.5.0.0/16
+                  gateway: 10.5.0.1
