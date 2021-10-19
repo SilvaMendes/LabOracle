@@ -7,7 +7,7 @@ services:
             sip_b2b:
                 ipv4_address: 10.6.0.5
         ports:
-            - "10.6.0.5:5060/udp:5040/udp"
+            - "10.6.0.5:5060:5040/udp"
         restart: always
 volumes:
     data:
