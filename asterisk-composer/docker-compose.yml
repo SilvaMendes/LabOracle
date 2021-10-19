@@ -5,7 +5,18 @@ services:
         container_name:
             "lab-asterisk"
         ports:
-            - "5060:5061"
+            - "10.6.0.5:5060:5040"
+        networks:
+            sip_b2b:
+                ipv4_address: 10.6.0.5
         restart: always
 volumes:
     data:
+
+networks:
+    sip_b2b:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.6.0.0/16
+                  gateway: 10.6.0.1

@@ -4,7 +4,7 @@ services:
         build: .
         container_name: "Opensips32Lab"
         ports:
-            - "5060:5060"
+            - "10.5.0.10:5060:5060"
         networks:
             sip:
                 ipv4_address: 10.5.0.10
