@@ -3,12 +3,11 @@ services:
     opensips:
         build: .
         container_name: "Opensips32Lab"
-        ports:
-            - "10.5.0.10:5060:5060"
         networks:
             sip:
                 ipv4_address: 10.5.0.10
-
+        ports:
+            - "5060:5060/udp"
         restart: always
         environment:
             DEBIAN_FRONTEND: noninteractive
