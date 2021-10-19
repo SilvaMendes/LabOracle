@@ -2,21 +2,22 @@ version: "3"
 services:
     asterisk:
         image: eyeruleall/asterisk17
-        container_name:
-            "lab-asterisk"
-        ports:
-            - "10.6.0.5:5060:5040"
+        container_name: "lab-asterisk"
         networks:
             sip_b2b:
                 ipv4_address: 10.6.0.5
+        ports:
+            - "10.6.0.5:5060/udp:5040/udp"
         restart: always
 volumes:
     data:
 
 networks:
     sip_b2b:
+        name: Asterisk
         driver: bridge
         ipam:
+            driver: bridge
             config:
                 - subnet: 10.6.0.0/16
-                  gateway: 10.6.0.1
+                - gateway: 10.6.0.1
