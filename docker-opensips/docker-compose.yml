@@ -7,10 +7,10 @@ services:
         ports:
             - "5060:5060"
         networks:
-            vpcbr:
-            ipv4_address: 10.5.0.10
+            sip: 
+                ipv4_address: 10.5.0.10
+                
         restart: always
-    
         environment:
             DEBIAN_FRONTEND: noninteractive
         volumes:
@@ -21,7 +21,7 @@ volumes:
         
 networks:
   vpcbr:
-    driver: bridge
+    driver: sip
     ipam:
      config:
        - subnet: 10.5.0.0/16
