@@ -1,4 +1,5 @@
-version: '3'
+version: "3"
+
 services:
   redis:
     image: redis
@@ -6,12 +7,14 @@ services:
     networks:
       database_network:
         ipv4_address: 10.8.0.4
-  ports:
-    - '6379:6379'
-  restart: always
-  command: redis-server --requirepass CAllBoxSbc!
+    ports:
+      - "6379:6379"
+    restart: always
+    command: redis-server --requirepass CAllBoxSbc!
+
 volumes:
-  data: null
+  data:
+
 networks:
   database_network:
     driver: bridge
