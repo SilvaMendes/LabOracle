@@ -24,7 +24,7 @@ RUN if [ ${OPENSIPS_CLI} = true ]; then \
     && apt-get -y update -qq && apt-get -y install opensips-cli \
     ;fi
 
-ARG OPENSIPS_EXTRA_MODULES=cachedb_redis
+ARG OPENSIPS_EXTRA_MODULES=opensips-redis-module
 RUN if [ -n "${OPENSIPS_EXTRA_MODULES}" ]; then \
     apt-get -y install ${OPENSIPS_EXTRA_MODULES} \
     ;fi
