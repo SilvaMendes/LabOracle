@@ -1,5 +1,5 @@
 FROM debian:buster
-LABEL maintainer="Razvan Crainea <razvan@opensips.org>"
+LABEL maintainer="Samuel da Silva mendessamuel84@gmail.com"
 
 USER root
 
@@ -25,6 +25,7 @@ RUN if [ ${OPENSIPS_CLI} = true ]; then \
     ;fi
 
 ARG OPENSIPS_EXTRA_MODULES=opensips-redis-module
+ 
 RUN if [ -n "${OPENSIPS_EXTRA_MODULES}" ]; then \
     apt-get -y install ${OPENSIPS_EXTRA_MODULES} \
     ;fi

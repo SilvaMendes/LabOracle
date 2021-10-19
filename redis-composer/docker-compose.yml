@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass CAllBoxSbc!
+    container_name: "RedisLab"
+    networks:
+      sip_b2b:
+        ipv4_address: 10.8.0.4
+    ports:
+      - "6379:6379"
+    restart: always
+volumes:
+  data:
+
+networks:
+  sip_b2b:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.8.0.0/16
+        - gateway: 10.8.0.1
